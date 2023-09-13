@@ -2,8 +2,13 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:jest/recommended",
-    "plugin:jest/style",
-    "plugin:jest-dom/recommended",
-    "plugin:testing-library/react"
+    "plugin:jest/style"
+  ],
+  "overrides": [
+    {
+      "files": ["src/**/*.[jt]s?(x)"],
+      "excludedFiles": ["src/e2e/**/*.ts"],
+      "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+    }
   ]
 }
