@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "pnpm format-check && next lint",
     "format": "prettier --cache --write '**/*.{js,ts,tsx,md,json}' && eslint --cache --fix .",
     "format-check": "prettier --cache --list-different '**/*.{js,ts,tsx,md,json}'",
     "test": "jest",
