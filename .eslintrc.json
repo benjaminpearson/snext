@@ -9,6 +9,10 @@
       "files": ["src/**/*.[jt]s?(x)"],
       "excludedFiles": ["src/e2e/**/*.ts"],
       "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+    },
+    {
+      "files": ["src/e2e/**/*.ts"],
+      "extends": ["plugin:playwright/recommended"]
     }
   ]
 }
