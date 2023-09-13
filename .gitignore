@@ -34,3 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .eslintcache
+
+# playwright
+src/e2e/test-results/
