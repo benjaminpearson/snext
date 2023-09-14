@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { currentLocale } from 'next-i18n-router';
 import { Roboto } from 'next/font/google';
 
 const font = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'] });
@@ -10,9 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
+  params.locale = currentLocale();
   return (
     <html lang="en">
       <body className={font.className}>{children}</body>

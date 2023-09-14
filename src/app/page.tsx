@@ -7,7 +7,9 @@ export default function Home() {
     <ContentBlock>
       <Stack space="medium">
         <JobCard />
-        <Link href="/example">Example page</Link>
+        <Link href="/example">Example - EN</Link>
+        <Link href="/th/example">Example - TH</Link>
+        <Link href="/id/example">Example - ID</Link>
       </Stack>
     </ContentBlock>
   );
