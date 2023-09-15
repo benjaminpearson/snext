@@ -37,3 +37,4 @@ next-env.d.ts
 
 # playwright
 src/e2e/test-results/
+**/.vocab/index.ts
