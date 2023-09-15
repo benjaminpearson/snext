@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('vist home page', async ({ page }) => {
+test('visit home page', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveURL('http://localhost:3000');
   await expect(
@@ -8,7 +8,7 @@ test('vist home page', async ({ page }) => {
   ).toBeInViewport();
 });
 
-test('vist home page and visit th example page', async ({ page }) => {
+test('visit home page and visit th example page', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveURL('http://localhost:3000');
   await page.getByText('Example - TH').click();
