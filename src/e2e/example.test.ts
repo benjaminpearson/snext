@@ -1,9 +1,31 @@
 import { test, expect } from '@playwright/test';
 
-test('should navigate to the home page', async ({ page }) => {
+test('vist home page', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveURL('http://localhost:3000');
   await expect(
     page.getByRole('heading', { name: 'Product Designer' }),
   ).toBeInViewport();
+});
+
+test('vist home page and visit th example page', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveURL('http://localhost:3000');
+  await page.getByText('Example - TH').click();
+  await expect(page.getByText('Locale: th')).toBeInViewport();
+});
+
+test('visit english example page', async ({ page }) => {
+  await page.goto('http://localhost:3000/example');
+  await expect(page.getByText('Locale: en')).toBeInViewport();
+});
+
+test('visit thai example page', async ({ page }) => {
+  await page.goto('http://localhost:3000/th/example');
+  await expect(page.getByText('Locale: th')).toBeInViewport();
+});
+
+test('visit id example page', async ({ page }) => {
+  await page.goto('http://localhost:3000/id/example');
+  await expect(page.getByText('Locale: id')).toBeInViewport();
 });
