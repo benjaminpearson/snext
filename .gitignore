@@ -37,3 +37,8 @@ next-env.d.ts
 
 # playwright
 src/e2e/test-results/
+playwright-report/
+
+# vocab
+**/.vocab/index.ts
+
