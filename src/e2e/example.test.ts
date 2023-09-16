@@ -12,6 +12,7 @@ test('visit home page and visit th example page', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveURL('http://localhost:3000');
   await page.getByText('Example - TH').click();
+  await page.waitForURL('http://localhost:3000/th/example');
   await expect(page).toHaveURL('http://localhost:3000/th/example');
   await expect(page.getByText('Locale: th')).toBeInViewport();
 });
