@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { BraidTestProvider } from 'braid-design-system/test';
