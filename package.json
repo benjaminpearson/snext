@@ -9,15 +9,17 @@
     "lint": "pnpm format-check && next lint",
     "format": "prettier --cache --write '**/*.{js,ts,tsx,md,json}' && eslint --cache --fix .",
     "format-check": "prettier --cache --list-different '**/*.{js,ts,tsx,md,json}'",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-watch": "pnpm test --watch",
     "test-e2e": "playwright test ./src/e2e/*.test.ts",
     "test-e2e-ui": "pnpm test-e2e --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook",
+    "test-storybook": "test-storybook --coverage",
     "test-storybook-watch": "test-storybook --watch",
-    "test-storybook-ci": "pnpm dlx concurrently -k -s first -n \"Storybook,Test\" -c \"magenta,blue\" \"pnpm build-storybook --quiet && pnpm dlx http-server storybook-static --port 6006 --silent\" \"pnpm dlx wait-on tcp:127.0.0.1:6006 && pnpm test-storybook --ci\""
+    "test-storybook-ci": "pnpm dlx concurrently -k -s first -n \"Storybook,Test\" -c \"magenta,blue\" \"pnpm build-storybook --quiet && pnpm dlx http-server storybook-static --port 6006 --silent\" \"pnpm dlx wait-on tcp:127.0.0.1:6006 && pnpm test-storybook --ci\"",
+    "coverage-report-create": "cp coverage/storybook/coverage-storybook.json coverage/coverage-storybook.json && pnpm dlx nyc report --reporter=html -t coverage --report-dir coverage",
+    "coverage-report-open": "open coverage/index.html"
   },
   "dependencies": {
     "@types/node": "20.6.0",
@@ -36,6 +38,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.37.1",
+    "@storybook/addon-coverage": "0.0.9",
     "@storybook/addon-essentials": "^7.4.2",
     "@storybook/addon-interactions": "^7.4.2",
     "@storybook/addon-links": "^7.4.2",
@@ -60,6 +63,7 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "lefthook": "1.4.11",
+    "nyc": "15.1.0",
     "prettier": "3.0.3",
     "storybook": "^7.4.2",
     "wait-on": "7.0.1"

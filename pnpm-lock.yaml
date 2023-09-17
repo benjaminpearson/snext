@@ -49,6 +49,9 @@ devDependencies:
   '@playwright/test':
     specifier: 1.37.1
     version: 1.37.1
+  '@storybook/addon-coverage':
+    specifier: 0.0.9
+    version: 0.0.9
   '@storybook/addon-essentials':
     specifier: ^7.4.2
     version: 7.4.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
@@ -121,6 +124,9 @@ devDependencies:
   lefthook:
     specifier: 1.4.11
     version: 1.4.11
+  nyc:
+    specifier: 15.1.0
+    version: 15.1.0
   prettier:
     specifier: 3.0.3
     version: 3.0.3
@@ -3702,6 +3708,17 @@ packages:
       - '@types/react'
       - '@types/react-dom'
       - encoding
+      - supports-color
+    dev: true
+
+  /@storybook/addon-coverage@0.0.9:
+    resolution: {integrity: sha512-+GrNBVRsdc80L9BvKEbMr5HZsK2U/qB4+YfaWfDIpLP7Xa5volBuPdpVh72Ox2ouz2ptyimTIDkJxYXPSgq98A==}
+    dependencies:
+      '@types/babel__core': 7.20.1
+      '@types/istanbul-lib-coverage': 2.0.4
+      babel-plugin-istanbul: 6.1.1
+      vite-plugin-istanbul: 3.0.4
+    transitivePeerDependencies:
       - supports-color
     dev: true
 
@@ -16101,6 +16118,17 @@ packages:
       - sugarss
       - supports-color
       - terser
+
+  /vite-plugin-istanbul@3.0.4:
+    resolution: {integrity: sha512-DJy3cq6yOFbsM3gLQf/3zeuaJNJsfBv5dLFdZdv8sUV30xLtZI+66QeYfHUyP/5vBUYyLA+xNUCSG5uHY6w+5g==}
+    dependencies:
+      '@istanbuljs/load-nyc-config': 1.1.0
+      istanbul-lib-instrument: 5.2.1
+      picocolors: 1.0.0
+      test-exclude: 6.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /vite@4.4.9(@types/node@20.6.0)(less@4.2.0):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
