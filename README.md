@@ -44,3 +44,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Integrate Next.js and Storybook](https://storybook.js.org/recipes/next)
 - [Integrations / Addons](https://storybook.js.org/integrations)
 - [Awesome Storybook](https://github.com/lauthieb/awesome-storybook)
+- [Interaction testing with Storybook](https://storybook.js.org/blog/interaction-testing-with-storybook/)
+- [Test runner addon](https://storybook.js.org/addons/@storybook/test-runner)
