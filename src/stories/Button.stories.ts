@@ -1,3 +1,5 @@
+import { expect } from '@storybook/jest';
+import { within, userEvent } from '@storybook/testing-library';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
@@ -47,4 +49,10 @@ export const Small: Story = {
     size: 'small',
     label: 'Button',
   },
+};
+
+Small.play = async ({ args, canvasElement }) => {
+  const canvas = within(canvasElement);
+  await userEvent.click(canvas.getByRole('button'));
+  await expect(args.onClick).toHaveBeenCalled();
 };
