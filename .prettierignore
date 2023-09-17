@@ -2,3 +2,4 @@
 node_modules/
 public/
 **/*.vocab/index.ts
+storybook-static/

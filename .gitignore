@@ -42,3 +42,6 @@ playwright-report/
 # vocab
 **/.vocab/index.ts
 
+# storybook
+storybook-static
+

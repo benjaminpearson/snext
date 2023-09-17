@@ -32,3 +32,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Storybook
+
+### Upgrading
+
+- `pnpm dlx storybook@latest upgrade`
+
+### Resources
+
+- [Integrate Next.js and Storybook](https://storybook.js.org/recipes/next)
+- [Integrations / Addons](https://storybook.js.org/integrations)
+- [Awesome Storybook](https://github.com/lauthieb/awesome-storybook)
+- [Interaction testing with Storybook](https://storybook.js.org/blog/interaction-testing-with-storybook/)
+- [Test runner addon](https://storybook.js.org/addons/@storybook/test-runner)
+- [Accessibility addon](https://storybook.js.org/addons/@storybook/addon-a11y/)
