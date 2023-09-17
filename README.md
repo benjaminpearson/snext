@@ -46,3 +46,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Awesome Storybook](https://github.com/lauthieb/awesome-storybook)
 - [Interaction testing with Storybook](https://storybook.js.org/blog/interaction-testing-with-storybook/)
 - [Test runner addon](https://storybook.js.org/addons/@storybook/test-runner)
+- [Accessibility addon](https://storybook.js.org/addons/@storybook/addon-a11y/)
