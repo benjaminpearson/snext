@@ -44,7 +44,7 @@ steps:
 
   - label: ':white_check_mark: Unit Tests'
     key: 'unit-tests'
-    depends_on: 'build'
+    depends_on: 'install'
     commands:
       - pnpm vocab-compile
       - pnpm test
@@ -55,7 +55,7 @@ steps:
 
   - label: ':mag: E2E Tests'
     key: 'e2e-tests'
-    depends_on: 'build'
+    depends_on: 'install'
     commands:
       - pnpm vocab-compile
       - pnpm test-e2e
@@ -66,7 +66,7 @@ steps:
 
   - label: ':book: Storybook Tests'
     key: 'storybook-tests'
-    depends_on: 'build'
+    depends_on: 'install'
     commands:
       - pnpm vocab-compile
       - pnpm test-storybook-ci

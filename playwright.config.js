@@ -31,6 +31,7 @@ export default defineConfig({
     command: 'pnpm build && pnpm start',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
+    timeout: 300000,
   },
   // Output test results
   outputDir: './src/e2e/test-results',
