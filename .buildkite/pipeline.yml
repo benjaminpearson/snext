@@ -1,60 +1,58 @@
 steps:
   - label: ':package: Install Node Modules'
+    key: 'install'
     commands:
       - pnpm install
     agents:
       queue: default
-    artifact_paths:
-      - 'node_modules/**/*'
 
   - label: ':rotating_light: Lint'
+    depends_on: 'install'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm lint
     agents:
       queue: default
 
   - label: ':rocket: Build'
+    key: 'build'
+    depends_on: 'install'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm build
     agents:
       queue: default
 
   - label: ':white_check_mark: Unit Tests'
+    key: 'unit-tests'
+    depends_on: 'build'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test
     agents:
       queue: default
 
   - label: ':mag: E2E Tests'
+    key: 'e2e-tests'
+    depends_on: 'build'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test-e2e
     agents:
       queue: default
 
   - label: ':book: Storybook Tests'
+    key: 'storybook-tests'
+    depends_on: 'build'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test-storybook-ci
     agents:
       queue: default
 
   - label: ':chart_with_upwards_trend: Coverage Reports'
+    depends_on:
+      - 'unit-tests'
+      - 'e2e-tests'
+      - 'storybook-tests'
     commands:
-      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm coverage-report-create
     agents:
       queue: default
     artifact_paths:
       - coverage/
-    plugins:
-      - artifacts#v2.1.0:
-          upload:
-            'coverage/':
-              path: coverage
-          download:
-            'coverage/':
-              path: coverage
