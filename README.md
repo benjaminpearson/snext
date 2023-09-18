@@ -1,4 +1,4 @@
-# sku-next
+# snext
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that emulates many of the benefits that [sku](https://github.com/seek-oss/sku) provides including [Braid Design System](https://seek-oss.github.io/braid-design-system/), [Vanilla Extract](https://vanilla-extract.style/), [Vocab](https://github.com/seek-oss/vocab), Localised routing, [Playwright](https://playwright.dev/), [ESLint](http://eslint.org/), [Prettier](https://prettier.io/), [Jest](https://facebook.github.io/jest/) and [Storybook](https://storybook.js.org/).
 
