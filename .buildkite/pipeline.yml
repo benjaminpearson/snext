@@ -42,9 +42,6 @@ steps:
       queue: default
     artifact_paths:
       - coverage/
-    annotation:
-      title: 'Coverage Report'
-      text: 'You can view the coverage report [here]($BUILDKITE_BUILD_URL/artifacts/0/coverage/index.html).'
     plugins:
       - artifacts#v2.1.0:
           upload:
