@@ -1,0 +1,76 @@
+common:
+  - cache_plugin: &cache
+      cache#v0.6.0:
+        compression: tgz
+        manifest: pnpm-lock.yaml
+        path: node_modules
+        restore: file
+
+steps:
+  - label: ':package: Install Node Modules'
+    key: 'install'
+    commands:
+      - pnpm install
+    agents:
+      queue: default
+    plugins:
+      - cache#v0.6.0:
+          compression: tgz
+          manifest: pnpm-lock.yaml
+          path: node_modules
+          restore: pipeline
+          save: file
+
+  - label: ':rotating_light: Lint'
+    depends_on: 'install'
+    commands:
+      - pnpm vocab-compile
+      - pnpm lint
+    agents:
+      queue: default
+    plugins:
+      - *cache
+
+  - label: ':rocket: Build'
+    key: 'build'
+    depends_on: 'install'
+    commands:
+      - pnpm vocab-compile
+      - pnpm build
+    agents:
+      queue: default
+    plugins:
+      - *cache
+
+  - label: ':white_check_mark: Unit Tests'
+    key: 'unit-tests'
+    depends_on: 'install'
+    commands:
+      - pnpm vocab-compile
+      - pnpm test
+    agents:
+      queue: default
+    plugins:
+      - *cache
+
+  - label: ':mag: E2E Tests'
+    key: 'e2e-tests'
+    depends_on: 'install'
+    commands:
+      - pnpm vocab-compile
+      - pnpm test-e2e
+    agents:
+      queue: default
+    plugins:
+      - *cache
+
+  - label: ':book: Storybook Tests'
+    key: 'storybook-tests'
+    depends_on: 'install'
+    commands:
+      - pnpm vocab-compile
+      - pnpm test-storybook-ci
+    agents:
+      queue: default
+    plugins:
+      - *cache
