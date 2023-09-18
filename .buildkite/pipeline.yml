@@ -4,39 +4,47 @@ steps:
       - pnpm install
     agents:
       queue: default
+    artifact_paths:
+      - 'node_modules/**/*'
 
   - label: ':rotating_light: Lint'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm lint
     agents:
       queue: default
 
   - label: ':rocket: Build'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm build
     agents:
       queue: default
 
   - label: ':white_check_mark: Unit Tests'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test
     agents:
       queue: default
 
   - label: ':mag: E2E Tests'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test-e2e
     agents:
       queue: default
 
   - label: ':book: Storybook Tests'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm test-storybook-ci
     agents:
       queue: default
 
   - label: ':chart_with_upwards_trend: Coverage Reports'
     commands:
+      - buildkite-agent artifact download "node_modules/**/*" .
       - pnpm coverage-report-create
     agents:
       queue: default
