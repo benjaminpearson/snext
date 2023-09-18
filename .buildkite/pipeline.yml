@@ -74,22 +74,3 @@ steps:
       queue: default
     plugins:
       - *cache
-
-  - label: ':chart_with_upwards_trend: Coverage Reports'
-    depends_on:
-      - 'unit-tests'
-      - 'e2e-tests'
-      - 'storybook-tests'
-    commands:
-      - pnpm coverage-report-create
-    agents:
-      queue: default
-    artifact_paths:
-      - coverage/
-    plugins:
-      - cache#v0.6.0:
-          compression: tgz
-          manifest: pnpm-lock.yaml
-          path: node_modules
-          restore: file
-          save: pipeline
