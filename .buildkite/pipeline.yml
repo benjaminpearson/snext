@@ -1,3 +1,10 @@
+common:
+  - cache_plugin: &cache
+      cache#v0.6.0:
+        manifest: pnpm-lock.yaml
+        path: node_modules
+        restore: file
+
 steps:
   - label: ':package: Install Node Modules'
     key: 'install'
@@ -7,7 +14,7 @@ steps:
       queue: default
     plugins:
       - cache#v0.6.0:
-          manifest: package-lock.json
+          manifest: pnpm-lock.yaml
           path: node_modules
           restore: pipeline
           save: file
@@ -19,10 +26,7 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          manifest: package-lock.json
-          path: node_modules
-          restore: file
+      - *cache
 
   - label: ':rocket: Build'
     key: 'build'
@@ -32,10 +36,7 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          manifest: package-lock.json
-          path: node_modules
-          restore: file
+      - *cache
 
   - label: ':white_check_mark: Unit Tests'
     key: 'unit-tests'
@@ -45,10 +46,7 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          manifest: package-lock.json
-          path: node_modules
-          restore: file
+      - *cache
 
   - label: ':mag: E2E Tests'
     key: 'e2e-tests'
@@ -58,10 +56,7 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          manifest: package-lock.json
-          path: node_modules
-          restore: file
+      - *cache
 
   - label: ':book: Storybook Tests'
     key: 'storybook-tests'
@@ -71,10 +66,7 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          manifest: package-lock.json
-          path: node_modules
-          restore: file
+      - *cache
 
   - label: ':chart_with_upwards_trend: Coverage Reports'
     depends_on:
@@ -89,7 +81,7 @@ steps:
       - coverage/
     plugins:
       - cache#v0.6.0:
-          manifest: package-lock.json
+          manifest: pnpm-lock.yaml
           path: node_modules
           restore: file
           save: pipeline
