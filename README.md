@@ -2,19 +2,18 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that emulates many of the benefits that [sku](https://github.com/seek-oss/sku) provides including [Braid Design System](https://seek-oss.github.io/braid-design-system/), [Vanilla Extract](https://vanilla-extract.style/), [Vocab](https://github.com/seek-oss/vocab), Localised routing, [Playwright](https://playwright.dev/), [ESLint](http://eslint.org/), [Prettier](https://prettier.io/), [Jest](https://facebook.github.io/jest/) and [Storybook](https://storybook.js.org/).
 
+This is a proof of concept and an exploration of how the SEEK open source packages can be stitched together into the NextJS framework.
+
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+pnpm i
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Roboto, a custom Google Font.
 
 ## Learn More
 
@@ -26,6 +25,8 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Storybook
+
+Storybook has been implemenented to organise component creation and also setup for interaction and accessibility tests.
 
 ### Upgrading
 
