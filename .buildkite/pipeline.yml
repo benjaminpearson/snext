@@ -1,7 +1,7 @@
 common:
   - cache_plugin: &cache
       cache#v0.6.0:
-        compression: tgz
+        compression: zip
         manifest: pnpm-lock.yaml
         path: node_modules
         restore: file
@@ -15,7 +15,7 @@ steps:
       queue: default
     plugins:
       - cache#v0.6.0:
-          compression: tgz
+          compression: zip
           manifest: pnpm-lock.yaml
           path: node_modules
           restore: pipeline
@@ -83,7 +83,7 @@ steps:
       - coverage/
     plugins:
       - cache#v0.6.0:
-          compression: tgz
+          compression: zip
           manifest: pnpm-lock.yaml
           path: node_modules
           restore: file
