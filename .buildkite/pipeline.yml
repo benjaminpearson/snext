@@ -1,3 +1,55 @@
 steps:
-  - label: 'Example Test'
-    command: echo "Hello!"
+  - label: ':package: Install Node Modules'
+    commands:
+      - pnpm install
+    agents:
+      queue: default
+
+  - label: ':rotating_light: Lint'
+    commands:
+      - pnpm lint
+    agents:
+      queue: default
+
+  - label: ':rocket: Build'
+    commands:
+      - pnpm build
+    agents:
+      queue: default
+
+  - label: ':white_check_mark: Unit Tests'
+    commands:
+      - pnpm test
+    agents:
+      queue: default
+
+  - label: ':mag: E2E Tests'
+    commands:
+      - pnpm test-e2e
+    agents:
+      queue: default
+
+  - label: ':book: Storybook Tests'
+    commands:
+      - pnpm test-storybook-ci
+    agents:
+      queue: default
+
+  - label: ':chart_with_upwards_trend: Coverage Reports'
+    commands:
+      - pnpm coverage-report-create
+    agents:
+      queue: default
+    artifact_paths:
+      - coverage/
+    annotation:
+      title: 'Coverage Report'
+      text: 'You can view the coverage report [here]($BUILDKITE_BUILD_URL/artifacts/0/coverage/index.html).'
+    plugins:
+      - artifacts#v2.1.0:
+          upload:
+            'coverage/':
+              path: coverage
+          download:
+            'coverage/':
+              path: coverage
