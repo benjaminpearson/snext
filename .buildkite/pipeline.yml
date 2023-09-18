@@ -24,6 +24,7 @@ steps:
   - label: ':rotating_light: Lint'
     depends_on: 'install'
     commands:
+      - pnpm vocab-compile
       - pnpm lint
     agents:
       queue: default
@@ -34,6 +35,7 @@ steps:
     key: 'build'
     depends_on: 'install'
     commands:
+      - pnpm vocab-compile
       - pnpm build
     agents:
       queue: default
@@ -44,6 +46,7 @@ steps:
     key: 'unit-tests'
     depends_on: 'build'
     commands:
+      - pnpm vocab-compile
       - pnpm test
     agents:
       queue: default
@@ -54,6 +57,7 @@ steps:
     key: 'e2e-tests'
     depends_on: 'build'
     commands:
+      - pnpm vocab-compile
       - pnpm test-e2e
     agents:
       queue: default
@@ -64,6 +68,7 @@ steps:
     key: 'storybook-tests'
     depends_on: 'build'
     commands:
+      - pnpm vocab-compile
       - pnpm test-storybook-ci
     agents:
       queue: default

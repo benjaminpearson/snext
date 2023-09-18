@@ -19,7 +19,8 @@
     "test-storybook-watch": "test-storybook --watch",
     "test-storybook-ci": "pnpm dlx concurrently -k -s first -n \"Storybook,Test\" -c \"magenta,blue\" \"pnpm build-storybook --quiet && pnpm dlx http-server storybook-static --port 6006 --silent\" \"pnpm dlx wait-on tcp:127.0.0.1:6006 && pnpm test-storybook --ci\"",
     "coverage-report-create": "cp coverage/storybook/coverage-storybook.json coverage/coverage-storybook.json && pnpm dlx nyc report --reporter=html -t coverage --report-dir coverage",
-    "coverage-report-open": "open coverage/index.html"
+    "coverage-report-open": "open coverage/index.html",
+    "vocab-compile": "vocab compile"
   },
   "dependencies": {
     "@types/node": "20.6.0",
