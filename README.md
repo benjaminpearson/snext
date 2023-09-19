@@ -17,7 +17,7 @@ This is a proof of concept and an exploration of how the SEEK open source packag
 
 ## Preview Deployment
 
-You can access a live preview of this project at [https://snext-seven.vercel.app/](https://snext-seven.vercel.app/).
+You can access a live preview of this project at [https://snext-starter.vercel.app/](https://snext-starter.vercel.app/).
 
 You can also see the Storybook live demo https://snext-storybook.vercel.app/
 
