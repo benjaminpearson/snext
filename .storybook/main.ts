@@ -1,3 +1,4 @@
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -9,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-coverage',
     '@storybook/addon-a11y',
+    'storybook-addon-theme-provider',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -16,6 +18,17 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        plugins: (config.resolve?.plugins || []).concat([
+          new TsconfigPathsPlugin(),
+        ]),
+      },
+    };
   },
 };
 export default config;
