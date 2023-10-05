@@ -136,6 +136,12 @@ devDependencies:
   storybook:
     specifier: 7.4.6
     version: 7.4.6
+  storybook-addon-theme-provider:
+    specifier: 0.1.10
+    version: 0.1.10(@storybook/blocks@7.4.3)(@storybook/components@7.4.3)(@storybook/core-events@7.4.3)(@storybook/manager-api@7.4.3)(@storybook/preview-api@7.4.3)(@storybook/theming@7.4.3)(@storybook/types@7.4.3)(react-dom@18.2.0)(react@18.2.0)
+  tsconfig-paths-webpack-plugin:
+    specifier: 4.1.0
+    version: 4.1.0
   wait-on:
     specifier: 7.0.1
     version: 7.0.1
@@ -15669,6 +15675,35 @@ packages:
 
   /store2@2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
+
+  /storybook-addon-theme-provider@0.1.10(@storybook/blocks@7.4.3)(@storybook/components@7.4.3)(@storybook/core-events@7.4.3)(@storybook/manager-api@7.4.3)(@storybook/preview-api@7.4.3)(@storybook/theming@7.4.3)(@storybook/types@7.4.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-F1sbbxhToJASE0yFwTis/j0/uAtiH8OQdeeSS/6nGzTls3oIy0RD9YHXE3N8NZFM/o1Xg782zF4W+b92jdilCw==}
+    peerDependencies:
+      '@storybook/blocks': ^7.0.0
+      '@storybook/components': ^7.0.0
+      '@storybook/core-events': ^7.0.0
+      '@storybook/manager-api': ^7.0.0
+      '@storybook/preview-api': ^7.0.0
+      '@storybook/theming': ^7.0.0
+      '@storybook/types': ^7.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/blocks': 7.4.3(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/components': 7.4.3(@types/react-dom@18.2.7)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-events': 7.4.3
+      '@storybook/manager-api': 7.4.3(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.4.3
+      '@storybook/theming': 7.4.3(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 7.4.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: true
 
   /storybook@7.4.6:
     resolution: {integrity: sha512-YkFSpnR47j5zz7yElA+2axLjXN7K7TxDGJRHHlqXmG5iQ0PXzmjrj2RxMDKFz4Ybp/QjEUoJ4rx//ESEY0Nb5A==}

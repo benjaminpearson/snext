@@ -68,6 +68,8 @@
     "nyc": "15.1.0",
     "prettier": "3.0.3",
     "storybook": "7.4.6",
+    "storybook-addon-theme-provider": "0.1.10",
+    "tsconfig-paths-webpack-plugin": "4.1.0"
     "wait-on": "7.0.1"
   }
 }
