@@ -27,8 +27,8 @@ dependencies:
     specifier: 13.5.4
     version: 13.5.4(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)
   next-i18n-router:
-    specifier: 4.1.1
-    version: 4.1.1
+    specifier: 3.3.0
+    version: 3.3.0
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -13173,8 +13173,8 @@ packages:
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  /next-i18n-router@4.1.1:
-    resolution: {integrity: sha512-pDbeQEjxb2lb/zIsJnFnjV32xOXbI/ixAdyRciSZip33qUf/hbLWYCmRyOt57nFP+GXF+HDIJONT3y2bd5Mv3Q==}
+  /next-i18n-router@3.3.0:
+    resolution: {integrity: sha512-lojc3ICuCqgnlipD8gQyTaL/AD0tbFM4zchaCmxoGGKVkXG6r6DJ1rwkp/0rBC0B0KsXsRhFmHQglHyHr1Yu+g==}
     dependencies:
       '@formatjs/intl-localematcher': 0.2.32
       negotiator: 0.6.3
