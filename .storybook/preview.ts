@@ -5,7 +5,6 @@ import viewports from './viewports';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -17,7 +16,7 @@ const preview: Preview = {
     },
   },
   decorators: [withThemeProvider(Provider as any)],
-  globals: {
+  initialGlobals: {
     selectedTheme: 'apac',
     themes: [
       {
