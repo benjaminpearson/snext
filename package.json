@@ -68,6 +68,7 @@
     "prettier": "3.4.1",
     "storybook": "^8.4.5",
     "storybook-addon-theme-provider": "0.2.8",
+    "ts-jest": "29.2.5",
     "tsconfig-paths-webpack-plugin": "4.2.0",
     "wait-on": "8.0.1"
   },
