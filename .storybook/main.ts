@@ -16,19 +16,21 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
-  },
-  webpackFinal: async (config) => {
+  docs: {},
+  webpackFinal: async (existingConfig) => {
     return {
-      ...config,
+      ...existingConfig,
       resolve: {
-        ...config.resolve,
-        plugins: (config.resolve?.plugins || []).concat([
+        ...existingConfig.resolve,
+        plugins: (existingConfig.resolve?.plugins || []).concat([
           new TsconfigPathsPlugin(),
         ]),
       },
     };
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
+
 export default config;

@@ -1,7 +1,6 @@
 common:
   - cache_plugin: &cache
-      cache#v0.6.0:
-        compression: tgz
+      cache#v1.3.0:
         manifest: pnpm-lock.yaml
         path: node_modules
         restore: file
@@ -14,11 +13,9 @@ steps:
     agents:
       queue: default
     plugins:
-      - cache#v0.6.0:
-          compression: tgz
+      - cache#v1.3.0:
           manifest: pnpm-lock.yaml
           path: node_modules
-          restore: pipeline
           save: file
 
   - label: ':rotating_light: Lint'

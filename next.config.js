@@ -11,6 +11,9 @@ const nextConfig = {
       afterFiles: i18nRewriter(i18nConfig),
     };
   },
+  eslint: {
+    dirs: ['src', '.storybook'],
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

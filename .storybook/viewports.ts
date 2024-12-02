@@ -1,4 +1,4 @@
-export default {
+const viewport = {
   mobile: {
     name: 'Mobile',
     styles: {
@@ -32,3 +32,5 @@ export default {
     type: 'desktop',
   },
 };
+
+export default viewport;

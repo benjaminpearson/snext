@@ -1,5 +1,5 @@
-import { expect } from '@storybook/jest';
-import { within, userEvent } from '@storybook/testing-library';
+import { expect, fn } from '@storybook/test';
+import { within, userEvent } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
@@ -48,6 +48,7 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+    onClick: fn(),
   },
 };
 
