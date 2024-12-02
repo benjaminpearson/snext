@@ -3,7 +3,7 @@ common:
       cache#v1.3.0:
         manifest: pnpm-lock.yaml
         path: node_modules
-        restore: pipeline
+        restore: file
 
 steps:
   - label: ':package: Install Node Modules'
@@ -16,7 +16,7 @@ steps:
       - cache#v1.3.0:
           manifest: pnpm-lock.yaml
           path: node_modules
-          save: pipeline
+          save: file
 
   - label: ':rotating_light: Lint'
     depends_on: 'install'
